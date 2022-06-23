@@ -11,11 +11,10 @@
    - name: SNMP system info configuration.
      fmgr_devprof_system_snmp_sysinfo:
          bypass_validation: False
-         workspace_locking_adom: <value in [global, custom adom including root]>
          workspace_locking_timeout: 300
          rc_succeeded: [0, -2, -3, ...]
          rc_failed: [-2, -3, ...]
-         adom: <your own value>
-         devprof: <your own value>
+         adom: 10
+         devprof: 20
          devprof_system_snmp_sysinfo:
-            status: <value in [disable, enable]>
+            status: enable
