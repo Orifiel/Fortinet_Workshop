@@ -1,3 +1,4 @@
+---
 - hosts: fortigates
   connection: httpapi
   collections:
