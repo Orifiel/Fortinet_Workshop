@@ -2,19 +2,16 @@
 - hosts: fortigates
   connection: httpapi
   collections:
-  - fortinet.fortimanager
+  - fortinet.fortios
   vars:
-      ansible_httpapi_use_ssl: no
-      ansible_httpapi_validate_certs: False
-      ansible_httpapi_port: 80
+   vdom: "root"
+   ansible_httpapi_use_ssl: no
+   ansible_httpapi_validate_certs: no
+   ansible_httpapi_port: 80
   tasks:
-   - name: SNMP system info configuration.
-     fmgr_devprof_system_snmp_sysinfo:
-         bypass_validation: False
-         workspace_locking_timeout: 300
-         rc_succeeded: [0, -2, -3, ...]
-         rc_failed: [-2, -3, ...]
-         adom: 10
-         devprof: 20
-         devprof_system_snmp_sysinfo:
-            status: enable
+   - name: Configure global attributes.
+     fortios_system_global:
+        vdom:  "{{ vdom }}"
+        #access_token: "{{ fortios_access_token }}" #if you prefer access token based authentication, add this line.
+        system_global:
+            hostname: 'CustomHostName'
