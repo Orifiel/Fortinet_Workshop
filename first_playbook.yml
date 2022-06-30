@@ -1,21 +1,22 @@
 ---
 - name: TESTE
   hosts: fortigates
-  connection: httpapi
   collections:
   - fortinet.fortimanager
-  vars:
-      ansible_httpapi_use_ssl: no
+ connection: httpapi
+ vars:
+      ansible_httpapi_use_ssl: True
       ansible_httpapi_validate_certs: False
-      ansible_httpapi_port: 80
+      ansible_httpapi_port: 443
   tasks:
    - name: SNMP system info configuration.
      fmgr_devprof_system_snmp_sysinfo:
          bypass_validation: False
          workspace_locking_timeout: 300
-         rc_succeeded: [0, -2, -3, ...]
-         rc_failed: [-2, -3, ...]
+         rc_succeeded: 0
+         rc_failed: 0
          adom: 10
          devprof: 20
          devprof_system_snmp_sysinfo:
             status: enable
+
