@@ -10,7 +10,7 @@
       ansible_httpapi_port: 443
   tasks:
    - name: SNMP system info configuration.
-     fmgr_devprof_system_snmp_sysinfo:
+     fortinet.fortimanager.fmgr_devprof_system_snmp_sysinfo:
          bypass_validation: False
          workspace_locking_timeout: 300
          rc_succeeded: 0
