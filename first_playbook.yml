@@ -1,27 +1,19 @@
 ---
-- name: CONFIGURE FIREWALL POLICY
+- name: TESTE - gathering fortimanager facts
   hosts: fortigates
-  connection: local
-  gather_facts: False
+  gather_facts: no
+  connection: httpapi
+  collections:
+    - fortinet.fortimanager
+  vars:
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
   tasks:
-    - name: CREATE ADOM REVISION
-      fortimgr_revision:
-        host: "{{ ansible_host }}"
-        username: "{{ ansible_user }}"
-        password: "{{ ansible_password }}"
-        adom: "dmz"
-        created_by: "automation"
-        description: "Weekly ADOM Revision"
-        revision_name: "Revision_MM/DD/YY"
-
-    - name: RESTORE REVISION
-      fortimgr_revision:
-        host: "{{ ansible_host }}"
-        username: "{{ ansible_user }}"
-        password: "{{ ansible_password }}"
-        adom: "dmz"
-        created_by: "user"
-        description: "ADOM Revert"
-        revision_name: "Last Good Revision"
-        restore_name" "Rollback"
-        state: "restore"
+   - name: retrieve all the application groups
+     fmgr_fact:
+       facts:
+           selector: 'application_group'
+           params:
+               adom: 'ansible'
+               group: ''
