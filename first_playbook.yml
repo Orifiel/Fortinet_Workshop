@@ -2,7 +2,7 @@
 - name: TESTE - gathering fortimanager facts
   hosts: fortigates
   gather_facts: no
-  connection: httpapi
+  connection: local
   collections:
     - fortinet.fortimanager
   vars:
