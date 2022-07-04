@@ -1,22 +1,19 @@
 ---
-- name: TESTE
+- name: TESTE - gathering fortimanager facts
   hosts: fortigates
+  gather_facts: no
+  connection: httpapi
   collections:
-  - fortinet.fortimanager
- connection: httpapi
- vars:
-      ansible_httpapi_use_ssl: True
-      ansible_httpapi_validate_certs: False
-      ansible_httpapi_port: 443
+    - fortinet.fortimanager
+  vars:
+    ansible_httpapi_use_ssl: True
+    ansible_httpapi_validate_certs: False
+    ansible_httpapi_port: 443
   tasks:
-   - name: SNMP system info configuration.
-     fortinet.fortimanager.fmgr_devprof_system_snmp_sysinfo:
-         bypass_validation: False
-         workspace_locking_timeout: 300
-         rc_succeeded: 0
-         rc_failed: 0
-         adom: 10
-         devprof: 20
-         devprof_system_snmp_sysinfo:
-            status: enable
-
+   - name: retrieve all the application groups
+     fmgr_fact:
+       facts:
+           selector: 'application_group'
+           params:
+               adom: 'ansible'
+               group: ''
