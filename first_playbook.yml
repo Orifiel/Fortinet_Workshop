@@ -1,26 +1,27 @@
 ---
-- name: TESTE - gathering fortimanager facts
+- name: CONFIGURE FIREWALL POLICY
   hosts: fortigates
-  gather_facts: no
-  connection: httpapi
-  collections:
-  - fortinet.fortios
-  vars:
-   vdom: "root"
-   ansible_httpapi_use_ssl: yes
-   ansible_httpapi_validate_certs: no
-   ansible_httpapi_port: 443
+  connection: local
+  gather_facts: False
   tasks:
+    - name: CREATE ADOM REVISION
+      fortimgr_revision:
+        host: "{{ ansible_host }}"
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        adom: "dmz"
+        created_by: "automation"
+        description: "Weekly ADOM Revision"
+        revision_name: "Revision_MM/DD/YY"
 
-  - name: Activate FortiToken
-    fortios_monitor:
-       vdom: "root"
-       selector: 'save.system.config'
-
-
-  - name: Reboot This Device
-    fortios_monitor:
-       vdom: "root"
-       selector: 'reboot.system.os'
-       params:
-           event_log_message: 'Reboot Request From Ansible'
+    - name: RESTORE REVISION
+      fortimgr_revision:
+        host: "{{ ansible_host }}"
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        adom: "dmz"
+        created_by: "user"
+        description: "ADOM Revert"
+        revision_name: "Last Good Revision"
+        restore_name" "Rollback"
+        state: "restore"
