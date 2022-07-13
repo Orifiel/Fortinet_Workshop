@@ -1,19 +1,28 @@
 ---
-- name: TESTE - gathering fortimanager facts
+- name: TESTE 
   hosts: fortigates
   gather_facts: no
   connection: local
   collections:
-    - fortinet.fortimanager
+  - fortinet.fortios
   vars:
-    ansible_httpapi_use_ssl: True
-    ansible_httpapi_validate_certs: False
-    ansible_httpapi_port: 443
+   host: "172.16.0.128"
+   vdom: "root"
+   ssl_verify: "False"
   tasks:
-   - name: retrieve all the application groups
-     fmgr_fact:
-       facts:
-           selector: 'application_group'
-           params:
-               adom: 'ansible'
-               group: ''
+  - name: Configure virtual IP for IPv4.
+    fortios_firewall_vip:
+      host:  "{{ host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      vdom:  "{{ vdom }}"
+      https: "True"
+      ssl_verify:  "{{ ssl_verify }}"
+      state: "present"
+      firewall_vip:
+        name: "testfwvip"
+        extip: "1.1.1.1-1.1.1.4"
+        extintf: "any"
+        mappedip:
+         -
+            range: "1.1.2.1-1.1.2.4"
