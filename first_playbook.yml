@@ -1,5 +1,5 @@
 ---
-- name: TESTE 
+- name: TESTE
   hosts: fortigates
   gather_facts: no
   connection: local
@@ -13,8 +13,8 @@
   - name: Configure virtual IP for IPv4.
     fortios_firewall_vip:
       host:  "{{ host }}"
-      username: "teste"
-      password: "teste"
+      username: "admin"
+      password: "Fortinet1!"
       vdom:  "{{ vdom }}"
       https: "True"
       ssl_verify:  "{{ ssl_verify }}"
@@ -26,3 +26,4 @@
         mappedip:
          -
             range: "1.1.2.1-1.1.2.4"
+
