@@ -4,7 +4,7 @@
   gather_facts: no
   connection: local
   collections:
-  - fortinet.fortios.fortios
+  - fortinet.fortios
   vars:
    host: "172.16.0.128"
    vdom: "root"
