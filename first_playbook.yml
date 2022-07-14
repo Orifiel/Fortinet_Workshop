@@ -13,8 +13,8 @@
   - name: Configure virtual IP for IPv4.
     fortios_firewall_vip:
       host:  "{{ host }}"
-      username: "{{ username }}"
-      password: "{{ password }}"
+      username: "teste"
+      password: "teste"
       vdom:  "{{ vdom }}"
       https: "True"
       ssl_verify:  "{{ ssl_verify }}"
