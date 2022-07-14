@@ -2,7 +2,7 @@
 - name: TESTE
   hosts: fortigates
   gather_facts: no
-  connection: httpapi
+  connection: local
   collections:
   - fortinet.fortios
   vars:
