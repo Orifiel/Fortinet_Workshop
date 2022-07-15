@@ -2,28 +2,19 @@
 - name: TESTE
   hosts: fortigates
   gather_facts: no
-  connection: local
   collections:
   - fortinet.fortios
+  connection: httpapi
+  
   vars:
-   host: "172.16.0.128"
    vdom: "root"
-   ssl_verify: "False"
+   ansible_httpapi_use_ssl: yes
+   ansible_httpapi_validate_certs: no
+   ansible_httpapi_port: 443
   tasks:
-  - name: Configure virtual IP for IPv4.
-    fortios_firewall_vip:
-      host:  "{{ host }}"
-      username: "admin"
-      password: "Fortinet1!"
-      vdom:  "{{ vdom }}"
-      https: "True"
-      ssl_verify:  "{{ ssl_verify }}"
-      state: "present"
-      firewall_vip:
-        name: "testfwvip"
-        extip: "1.1.1.1-1.1.1.4"
-        extintf: "any"
-        mappedip:
-         -
-            range: "1.1.2.1-1.1.2.4"
+   - name: Configure global attributes.
+     fortios_system_global:
+        vdom:  "{{ vdom }}"
+        system_global:
+            hostname: 'CustomHostName'
 
