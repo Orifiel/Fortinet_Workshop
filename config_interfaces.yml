@@ -16,8 +16,8 @@
     - name: Configure interface
       fortios_system_interface:
         vdom: "{{ vdom }}"
+        state: "absent"
         system_interface:
-          state: "absent"
           name: port2
           mode: dhcp
           status: up
