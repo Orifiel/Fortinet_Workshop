@@ -16,10 +16,10 @@
     - name: Configure interface
       fortios_system_interface:
         vdom: "{{ vdom }}"
-        state: "absent"
+        state: "present"
         system_interface:
-          name: port2
-          mode: dhcp
+          name: port3
+          mode: static
           status: up
           allowaccess: []
           type: physical
