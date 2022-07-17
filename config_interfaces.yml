@@ -19,8 +19,7 @@
         state: "present"
         system_interface:
           name: port3
-          mode: static
-          ip: 172.16.190.27/24
+          mode: dhcp
           status: up
           allowaccess: [ping, https, ssh, http]
           type: physical
