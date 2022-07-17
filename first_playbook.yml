@@ -2,28 +2,32 @@
 - name: TESTE
   hosts: fortigates
   gather_facts: no
-  connection: local
+  connection: httpapi
   collections:
-  - fortinet.fortios
+    - fortinet.fortios
   vars:
-   host: "172.16.0.128"
-   vdom: "root"
-   ssl_verify: "False"
-  tasks:
-  - name: Configure virtual IP for IPv4.
-    fortios_firewall_vip:
-      host:  "{{ host }}"
-      username: "admin"
-      password: "Fortinet1!"
-      vdom:  "{{ vdom }}"
-      https: "True"
-      ssl_verify:  "{{ ssl_verify }}"
-      state: "present"
-      firewall_vip:
-        name: "testfwvip"
-        extip: "1.1.1.1-1.1.1.4"
-        extintf: "any"
-        mappedip:
-         -
-            range: "1.1.2.1-1.1.2.4"
+    vdom: "root"
+    ansible_httpapi_use_ssl: no
+    ansible_httpapi_validate_certs: no
+    ansible_httpapi_port: 80
+    fw_services:
+      - ping
+      - https
+      - ssh
+      - http
 
+  tasks:
+    - name: Configure interface Port1
+      fortios_system_interface:
+        vdom: "{{ vdom }}"
+        state: "present"
+        system_interface:
+          ac_name: "port1"
+          mode: dhcp
+          allowaccess: "{{ __service }}"
+          type: physical
+          alias: "Gerencia"
+          snmp_index: "1"
+      loop: "{{ fw_services }}"
+      loop_control:
+        loop_var: __service
