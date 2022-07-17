@@ -26,11 +26,12 @@
         vdom: "{{ vdom }}"
         state: "present"
         system_interface:
+          interface: port3
           mode: dhcp
           allowaccess: "{{ __service }}"
           type: physical
           alias: "REDHAT"
-          snmp_index: "2"
+          snmp_index: "3"
 
       loop: "{{ fw_services }}"
       loop_control:
