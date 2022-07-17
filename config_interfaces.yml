@@ -16,18 +16,18 @@
       - https
       - ssh
       - http
-      - fgfm
 
   tasks:
-    - name: Configure interface Port2
+    - name: Configure interface
       # system_global:
       #       hostname: "{{ firewall_name }}"
       fortios_system_interface:
         vdom: "{{ vdom }}"
-        state: "present"
+        state: "absent"
         system_interface:
           name: port3
           mode: dhcp
+          status: up
           allowaccess: "{{ __service }}"
           type: physical
           alias: "REDHAT"
