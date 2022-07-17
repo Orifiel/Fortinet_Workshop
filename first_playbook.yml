@@ -2,6 +2,7 @@
 - name: TESTE
   hosts: fortigates
   gather_facts: no
+
   connection: httpapi
   collections:
     - fortinet.fortios
