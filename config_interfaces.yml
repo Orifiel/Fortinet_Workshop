@@ -21,7 +21,8 @@
           name: port3
           mode: static
           status: up
-          allowaccess: [fabric]
+          allowaccess:
+            state: absent
           type: physical
           alias: ""
           snmp_index: "2"
