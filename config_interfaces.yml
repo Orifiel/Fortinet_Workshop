@@ -11,16 +11,9 @@
     ansible_httpapi_use_ssl: no
     ansible_httpapi_validate_certs: no
     ansible_httpapi_port: 80
-    fw_services:
-      - ping
-      - https
-      - ssh
-      - http
 
   tasks:
     - name: Configure interface
-      # system_global:
-      #       hostname: "{{ firewall_name }}"
       fortios_system_interface:
         vdom: "{{ vdom }}"
         state: "present"
