@@ -16,12 +16,12 @@
     - name: Configure interface
       fortios_system_interface:
         vdom: "{{ vdom }}"
-        state: "present"
         system_interface:
+          state: "absent"
           name: port2
           mode: dhcp
           status: up
-          allowaccess: [ping, https, ssh, http]
+          allowaccess: []
           type: physical
-          alias: "REDHAT"
+          alias: ""
           snmp_index: "2"
