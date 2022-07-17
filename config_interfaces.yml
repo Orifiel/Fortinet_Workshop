@@ -18,10 +18,10 @@
         vdom: "{{ vdom }}"
         state: "present"
         system_interface:
-          name: port3
-          mode: static
+          name: "{{ interface_name }}"
+          mode: "{{ mode }}"
           status: up
-          allowaccess: []
+          allowaccess: "{{ service_list }}"
           type: physical
           alias: ""
           snmp_index: "2"
