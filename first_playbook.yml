@@ -23,7 +23,7 @@
         vdom: "{{ vdom }}"
         state: "absent"
         system_interface:
-          ac_name: "port1"
+          name: "port1"
           mode: dhcp
           allowaccess: "{{ __service }}"
           type: physical
