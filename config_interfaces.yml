@@ -26,7 +26,7 @@
         vdom: "{{ vdom }}"
         state: "present"
         system_interface:
-          interface: port3
+          name: port3
           mode: dhcp
           allowaccess: "{{ __service }}"
           type: physical
