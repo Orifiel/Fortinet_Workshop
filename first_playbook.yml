@@ -21,7 +21,7 @@
     - name: Configure interface Port1
       fortios_system_interface:
         vdom: "{{ vdom }}"
-        state: "present"
+        state: "absent"
         system_interface:
           ac_name: "port1"
           mode: dhcp
