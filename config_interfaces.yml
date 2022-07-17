@@ -26,13 +26,10 @@
         state: "present"
         system_interface:
           name: port3
-          mode: dhcp
+          mode: static
+          ip: 172.16.190.27/24
           status: up
           allowaccess: [ping, https, ssh, http]
           type: physical
           alias: "REDHAT"
           snmp_index: "3"
-
-      #loop: "{{ fw_services }}"
-      #loop_control:
-      # loop_var: __service
