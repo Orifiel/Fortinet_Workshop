@@ -23,16 +23,16 @@
       #       hostname: "{{ firewall_name }}"
       fortios_system_interface:
         vdom: "{{ vdom }}"
-        state: "absent"
+        state: "present"
         system_interface:
           name: port3
           mode: dhcp
           status: up
-          allowaccess: "{{ __service }}"
+          allowaccess: [ping, https, ssh, http]
           type: physical
           alias: "REDHAT"
           snmp_index: "3"
 
-      loop: "{{ fw_services }}"
-      loop_control:
-        loop_var: __service
+      #loop: "{{ fw_services }}"
+      #loop_control:
+      # loop_var: __service
