@@ -20,7 +20,7 @@
         system_interface:
           name: port2
           mode: dhcp
-          status: down
+          status: up
           allowaccess: [ping, https, ssh, http]
           type: physical
           alias: "REDHAT"
