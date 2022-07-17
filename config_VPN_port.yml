@@ -1,5 +1,5 @@
 ---
-- name: Configure FW Interface
+- name: Configure VPN port
   hosts: fortigates
   gather_facts: no
 
@@ -13,15 +13,11 @@
     ansible_httpapi_port: 80
 
   tasks:
-    - name: Configure interface
+    - name: Configure vpn tunnel
       fortios_system_interface:
         vdom: "{{ vdom }}"
         state: "present"
         system_interface:
-          name: "{{ interface_name }}"
-          mode: "{{ mode }}"
-          status: up
-          allowaccess: "{{ service_list }}"
-          type: physical
-          alias: "{{alias}}"
-          snmp_index: "2"
+          name: "VPN_ACCESS"
+          type: tunnel
+          snmp_index: "13"
