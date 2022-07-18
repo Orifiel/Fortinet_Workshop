@@ -18,9 +18,7 @@
         vdom: "{{ vdom }}"
         state: "present"
         system_interface:
-          vdom: "{{vdom}}"
-          interface: "port1"
-          vlanid: "1080"
-          name: "VPN_REDHAT"
+          name: "VPN-TESTE"
           type: tunnel
           snmp_index: "13"
+          interface: "port1"
