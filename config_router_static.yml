@@ -12,16 +12,16 @@
     ansible_httpapi_port: 80
 
   tasks:
-    - name: Configure rota estatica para destino remoto
+    - name: "Configure rota estatica para destino remoto"
       fortios_router_static:
         state: "present"
         vdom: "{{ vdom }}"
         router_static:
-          #status: "enable"
+          status: "enable"
           device: "VPN-REDHAT"
-          comment: "VPN-REDHAT created by Ansible"
-          dstaddr:
-            - name: "VPN-REDHAT"
+          #comment: "VPN-REDHAT created by Ansible"
+          #dstaddr:
+          #- name: "VPN-REDHAT"
 
   #   - name: Configure distância da rota estatica
   #     fortios_router_static:
