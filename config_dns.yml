@@ -16,7 +16,6 @@
     - name: Configure Primary e Second DNS
       fortios_system_dns:
         vdom: "{{ vdom }}"
-        state: "absent"
         system_dns:
           primary: "208.91.112.53"
           secondary: "208.91.112.52"
