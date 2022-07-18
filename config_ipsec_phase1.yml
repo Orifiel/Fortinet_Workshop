@@ -16,7 +16,7 @@
         state: "present"
         vdom: "{{ vdom }}"
         vpn_ipsec_phase1_interface:
-          name: "VPN-REDHAT"
+          name: "VPN-REDHAT-phase1"
           interface: "port1"
           peertype: "any"
           net_device: "disable"
