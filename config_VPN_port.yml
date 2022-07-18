@@ -19,7 +19,7 @@
         vdom: "{{ vdom }}"
         state: "present"
         system_interface:
-          ac_name: VPN_TESTE
+          name: VPN_TESTE
           type: tunnel
           snmp_index: "13"
           interface: "port1"
