@@ -23,4 +23,4 @@
           allowaccess: "{{ service_list }}"
           type: physical
           alias: "{{alias}}"
-          snmp_index: "2"
+          snmp_index: "{{index}}"
