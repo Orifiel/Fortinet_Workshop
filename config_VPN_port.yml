@@ -18,7 +18,8 @@
         vdom: "{{ vdom }}"
         state: "present"
         system_interface:
+          vdom: "{{vdom}}"
           interface: "port1"
-          name: "vpn_redhat"
+          name: "VPN_REDHAT"
           type: tunnel
           snmp_index: "13"
