@@ -20,7 +20,7 @@
           policyid: "0"
           srcintf:
             - name: "port2"
-          destintf:
+          dstintf:
             - name: "VPN-REDHAT"
           srcaddr:
             - name: "VPN_REDHAT_local"
