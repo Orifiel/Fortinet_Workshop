@@ -18,9 +18,10 @@
         vdom: "{{ vdom }}"
         router_static:
           status: "enable"
-          device: "VPN-REDHAT"
+          device: "redhat"
           #comment: "VPN REDHAT created by Ansible"
           dstaddr:
+            - name: 0.0.0.0/0.0.0.0
 
   #  - name: Configure distância da rota estatica
   #   fortios_router_static:
