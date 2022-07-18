@@ -25,7 +25,7 @@
     - name: Configura Remote Subnet
       fortios_firewall_address:
         vdom: "{{ vdom }}"
-        state: "present"
+        state: "absent"
         firewall_address:
           name: "VPN_remote_subnet_1"
           uuid: 1581d160-02e6-51ed-7600-8d7ccc2806cf
