@@ -19,6 +19,6 @@
         state: "present"
         system_interface:
           interface: "port1"
-          name: "{{vpn_name}}"
+          name: "vpn_redhat"
           type: tunnel
           snmp_index: "13"
