@@ -13,7 +13,7 @@
 
   tasks:
     - fortios_vpn_ipsec_phase2_interface:
-        state: "absent"
+        state: "present"
         vdom: "{{ vdom }}"
         vpn_ipsec_phase2_interface:
           name: "VPN-REDHAT-2"
