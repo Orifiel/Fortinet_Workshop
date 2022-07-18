@@ -1,0 +1,31 @@
+---
+- hosts: fortigates
+  gather_facts: no
+
+  connection: httpapi
+  collections:
+    - fortinet.fortios
+  vars:
+    vdom: "root"
+    ansible_httpapi_use_ssl: no
+    ansible_httpapi_validate_certs: no
+    ansible_httpapi_port: 80
+
+  tasks:
+    - name: Configure rota estatica para destino remoto
+      fortios_router_static:
+        state: "present"
+        vdom: "{{ vdom }}"
+        router_static:
+          status: "enable"
+          device: "VPN-REDHAT"
+          comment: "VPN-REDHAT created by Ansible"
+          dst_addr:
+            - name: "VPN_REDHAT_remote"
+
+    - name: Configure distância da rota estatica
+      fortios_router_static:
+        distance: "254"
+        comment: "VPN-REDHAT created by Ansible"
+        dst_addr:
+          - name: "VPN_REDHAT_remote"
