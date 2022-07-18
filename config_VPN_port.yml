@@ -21,4 +21,3 @@
           name: "VPN-TESTE"
           type: tunnel
           snmp_index: "13"
-          interface: "port1"
