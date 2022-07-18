@@ -13,6 +13,7 @@
     ansible_httpapi_port: 80
 
   tasks:
+    #Refazer
     - name: Configure vpn tunnel
       fortios_system_interface:
         vdom: "{{ vdom }}"
