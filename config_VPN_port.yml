@@ -18,6 +18,7 @@
         vdom: "{{ vdom }}"
         state: "present"
         system_interface:
-          name: "VPN_ACCESS"
+          interface: "port1"
+          name: "{{vpn_name}}"
           type: tunnel
           snmp_index: "13"
