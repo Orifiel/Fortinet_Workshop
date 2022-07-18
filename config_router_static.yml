@@ -14,12 +14,11 @@
   tasks:
     - name: "Configure rota estatica para destino remoto"
       fortios_router_static:
-        state: "present"
+        state: "absent"
         vdom: "{{ vdom }}"
         router_static:
           status: "enable"
           device: "VPN-REDHAT-1"
-          #comment: "VPN REDHAT created by Ansible"
           dst: 0.0.0.0 0.0.0.0
 
   #  - name: Configure distância da rota estatica
