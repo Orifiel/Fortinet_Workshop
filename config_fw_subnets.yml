@@ -15,19 +15,19 @@
     - name: Configura Local Subnet
       fortios_firewall_address:
         vdom: "{{ vdom }}"
-        state: "absent"
+        state: "present"
         firewall_address:
           name: "VPN_REDHAT_local"
-          uuid: 156918c8-02e6-51ed-b788-8662b01661ca
+          #uuid: 156918c8-02e6-51ed-b788-8662b01661ca
           allow_routing: "enable"
           subnet: 172.16.190.0 255.255.255.0
 
     - name: Configura Remote Subnet
       fortios_firewall_address:
         vdom: "{{ vdom }}"
-        state: "absent"
+        state: "present"
         firewall_address:
           name: "VPN_REDHAT_remote"
-          uuid: 1581d160-02e6-51ed-7600-8d7ccc2806cf
+          #uuid: 1581d160-02e6-51ed-7600-8d7ccc2806cf
           allow_routing: "enable"
           subnet: 10.0.0.0 255.255.255.0
