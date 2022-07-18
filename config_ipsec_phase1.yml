@@ -23,5 +23,5 @@
           proposal: ["des-md5", "des-sha1"]
           comments: "VPN created by Ansible"
           wizard_type: "static-fortigate"
-          remote_gw: "177.143.128.91"
+          remote_gw: "177.143.128.92"
           psksecret: "{{ secret }}"
