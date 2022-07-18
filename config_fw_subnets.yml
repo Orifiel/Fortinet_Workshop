@@ -18,7 +18,7 @@
         state: "absent"
         firewall_address:
           name: "VPN_local_subnet_1"
-          uuid: 156918c8-02e6-51ed-b788-8662b01661ca
+          #uuid: 156918c8-02e6-51ed-b788-8662b01661ca
           allow_routing: "enable"
           subnet: 172.16.190.0 255.255.255.0
 
@@ -28,6 +28,6 @@
         state: "absent"
         firewall_address:
           name: "VPN_remote_subnet_1"
-          uuid: 1581d160-02e6-51ed-7600-8d7ccc2806cf
+          #uuid: 1581d160-02e6-51ed-7600-8d7ccc2806cf
           allow_routing: "enable"
           subnet: 10.0.0.0 255.255.255.0
