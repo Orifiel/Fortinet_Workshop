@@ -44,9 +44,9 @@
           dstintf:
             - name: "port2"
           srcaddr:
-            - name: "VPN_REDHAT_remote"
+            - name: "Redhat_remoto"
           dstaddr:
-            - name: "VPN_REDHAT_local"
+            - name: "RedHat_local"
           action: "accept"
           schedule: "always"
           service:
