@@ -17,6 +17,7 @@
         state: "present"
         firewall_policy:
           name: "vpn_VPN-REDHAT_local"
+          policyid: "1"
           srcintf:
             - name: "port2"
           destintf:
