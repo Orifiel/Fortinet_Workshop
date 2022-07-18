@@ -17,28 +17,27 @@
         vdom: "{{ vdom }}"
         state: "present"
         firewall_policy:
-          name: "vpn_VPN-REDHAT_local_0"
+          name: "REDHAT_local_remoto"
           policyid: "1"
           srcintf:
             - name: "port2"
           dstintf:
-            - name: "VPN-REDHAT"
+            - name: "VPN-REDHAT-1"
           srcaddr:
-            - name: "VPN_REDHAT_local"
+            - name: "RedHat_local"
           dstaddr:
-            - name: "VPN_REDHAT_remote"
+            - name: "Redhat_remoto"
           action: "accept"
           schedule: "always"
           service:
             - name: "ALL"
-          comments: "VPN created by Ansible"
 
     - name: Configure Politica para VPN Remote to Local
       fortios_firewall_policy:
         vdom: "{{ vdom }}"
         state: "present"
         firewall_policy:
-          name: "vpn_VPN-REDHAT_remote_0"
+          name: "REDHAT_remote_local"
           policyid: "2"
           srcintf:
             - name: "VPN-REDHAT"
@@ -52,4 +51,3 @@
           schedule: "always"
           service:
             - name: "ALL"
-          comments: "VPN created by Ansible"
