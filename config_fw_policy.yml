@@ -12,7 +12,8 @@
     ansible_httpapi_port: 80
 
   tasks:
-    - fortios_firewall_policy:
+    - name: Configure Politica para VPN Local to Remote
+      fortios_firewall_policy:
         vdom: "{{ vdom }}"
         state: "present"
         firewall_policy:
@@ -26,6 +27,27 @@
             - name: "VPN_REDHAT_local"
           dstaddr:
             - name: "VPN_REDHAT_remote"
+          action: "accept"
+          schedule: "always"
+          service:
+            - name: "ALL"
+          comments: "VPN created by Ansible"
+
+    - name: Configure Politica para VPN Remote to Local
+      fortios_firewall_policy:
+        vdom: "{{ vdom }}"
+        state: "present"
+        firewall_policy:
+          name: "vpn_VPN-REDHAT_remote_0"
+          policyid: "1"
+          srcintf:
+            - name: "VPN-REDHAT"
+          dstintf:
+            - name: "port2"
+          srcaddr:
+            - name: "VPN_REDHAT_remote"
+          dstaddr:
+            - name: "VPN_REDHAT_local"
           action: "accept"
           schedule: "always"
           service:
