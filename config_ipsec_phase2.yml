@@ -12,7 +12,7 @@
     ansible_httpapi_port: 80
 
   tasks:
-    - fortios_vpn_ipsec_phase1_interface:
+    - fortios_vpn_ipsec_phase2_interface:
         state: "present"
         vdom: "{{ vdom }}"
         vpn_ipsec_phase2_interface:
