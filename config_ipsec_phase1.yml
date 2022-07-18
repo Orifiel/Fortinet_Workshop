@@ -13,10 +13,10 @@
 
   tasks:
     - fortios_vpn_ipsec_phase1_interface:
-        state: "absent"
+        state: "present"
         vdom: "{{ vdom }}"
         vpn_ipsec_phase1_interface:
-          name: "VPN-REDHAT"
+          name: "VPN-REDHAT-1"
           interface: "port1"
           peertype: "any"
           net_device: "disable"
