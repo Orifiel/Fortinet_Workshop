@@ -17,3 +17,7 @@
       fortios_system_interface:
         vdom: "{{ vdom }}"
         state: "present"
+        system_interface:
+          name: "VPN-TESTE"
+          type: tunnel
+          snmp_index: "13"

@@ -1,6 +1,5 @@
 ---
-- name: Configure FW Interface
-  hosts: fortigates
+- hosts: fortigates
   gather_facts: no
 
   connection: httpapi

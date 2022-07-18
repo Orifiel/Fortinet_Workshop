@@ -1,6 +1,5 @@
 ---
-- name: Configure DNS no Fortigate
-  hosts: fortigates
+- hosts: fortigates
   gather_facts: no
 
   connection: httpapi
