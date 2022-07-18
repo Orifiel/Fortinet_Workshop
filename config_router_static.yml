@@ -18,7 +18,7 @@
         vdom: "{{ vdom }}"
         router_static:
           status: "enable"
-          device: "redhat"
+          device: "VPN-REDHAT-1"
           #comment: "VPN REDHAT created by Ansible"
           dstaddr: 0.0.0.0/0.0.0.0
 
