@@ -1,0 +1,27 @@
+---
+- hosts: fortigates
+  gather_facts: no
+
+  connection: httpapi
+  collections:
+    - fortinet.fortios
+  vars:
+    vdom: "root"
+    ansible_httpapi_use_ssl: no
+    ansible_httpapi_validate_certs: no
+    ansible_httpapi_port: 80
+    secret: "fortigate123"
+
+  tasks:
+    - fortios_vpn_ipsec_phase1_interface:
+        state: "present"
+        vdom: "{{ vdom }}"
+        vpn_ipsec_phase1_interface:
+          interface: "port1"
+          peertype: "any"
+          net_device: "disable"
+          proposal: ["des-md5", "des-sha1"]
+          comments: "VPN created by Ansible"
+          wizard_type: "static-fortigate"
+          remote_gw: "177.143.128.91"
+          psksecret: "{{ secret }}"
