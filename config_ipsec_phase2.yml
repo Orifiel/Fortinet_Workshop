@@ -17,7 +17,7 @@
         vdom: "{{ vdom }}"
         vpn_ipsec_phase2_interface:
           name: "VPN-REDHAT-2"
-          phase1name: "VPN-REDHAT"
+          phase1name: "VPN-REDHAT-1"
           proposal: ["des-md5", "des-sha1"]
           comments: "VPN created by Ansible"
           src_addr_type: name
