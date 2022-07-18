@@ -1,0 +1,21 @@
+---
+- name: Configure DNS no Fortigate
+  hosts: fortigates
+  gather_facts: no
+
+  connection: httpapi
+  collections:
+    - fortinet.fortios
+  vars:
+    vdom: "root"
+    ansible_httpapi_use_ssl: no
+    ansible_httpapi_validate_certs: no
+    ansible_httpapi_port: 80
+
+  tasks:
+    - name: Configure Primary e Second DNS
+      fortios_system_dns:
+      vdom: "{{ vdom }}"
+      system_dns:
+        primary: "208.91.112.53"
+        secondary: "208.91.112.52"
