@@ -19,6 +19,7 @@
         router_static:
           status: "enable"
           device: "VPN-REDHAT"
+          seq_number: "1"
           #comment: "VPN REDHAT created by Ansible"
           dstaddr:
             - name: VPN_REDHAT_remote
