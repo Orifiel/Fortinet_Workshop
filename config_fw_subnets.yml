@@ -27,7 +27,7 @@
         vdom: "{{ vdom }}"
         state: "present"
         firewall_address:
-          name: "VPN_local_subnet_1"
+          name: "VPN_remote_subnet_1"
           uuid: 1581d160-02e6-51ed-7600-8d7ccc2806cf
           allow_routing: "enable"
           subnet: 10.0.0.0 255.255.255.0
