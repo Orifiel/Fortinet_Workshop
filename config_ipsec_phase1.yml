@@ -13,15 +13,15 @@
 
   tasks:
     - fortios_vpn_ipsec_phase1_interface:
-        state: "present"
+        state: "absent"
         vdom: "{{ vdom }}"
         vpn_ipsec_phase1_interface:
-          name: "VPN-REDHAT-phase1"
+          name: "VPN-REDHAT"
           interface: "port1"
           peertype: "any"
           net_device: "disable"
           proposal: ["des-md5", "des-sha1"]
           comments: "VPN created by Ansible"
           wizard_type: "static-fortigate"
-          remote_gw: "177.143.128.92"
+          remote_gw: "177.143.128.91"
           psksecret: "{{ secret }}"

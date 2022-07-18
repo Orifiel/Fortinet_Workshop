@@ -13,10 +13,10 @@
 
   tasks:
     - fortios_vpn_ipsec_phase2_interface:
-        state: "present"
+        state: "absent"
         vdom: "{{ vdom }}"
         vpn_ipsec_phase2_interface:
-          name: "VPN-REDHAT-phase2"
+          name: "VPN-REDHAT"
           phase1name: "VPN-REDHAT"
           proposal: ["des-md5", "des-sha1"]
           comments: "VPN created by Ansible"
