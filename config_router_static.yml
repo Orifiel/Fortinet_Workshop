@@ -28,7 +28,8 @@
         state: "present"
         vdom: "{{ vdom }}"
         router_static:
-          distance: "254"
+          status: "enable"
+          distance: 254
           comment: "VPN-REDHAT created by Ansible"
           dstaddr:
             - name: "VPN_REDHAT_remote"
