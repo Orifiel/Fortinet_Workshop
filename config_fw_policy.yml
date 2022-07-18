@@ -16,8 +16,8 @@
         vdom: "{{ vdom }}"
         state: "present"
         firewall_policy:
-          name: "vpn_VPN-REDHAT_local"
-          policyid: "1"
+          name: "vpn_VPN-REDHAT_local_0"
+          policyid: "0"
           srcintf:
             - name: "port2"
           destintf:
