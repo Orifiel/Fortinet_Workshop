@@ -22,5 +22,5 @@
           comments: "VPN created by Ansible"
           src_addr_type: name
           dst_addr_type: name
-          src_name: "VPN_REDHAT_local"
-          dst_name: "VPN_REDHAT_remote"
+          src_name: "RedHat_local"
+          dst_name: "RedHat_remote"
