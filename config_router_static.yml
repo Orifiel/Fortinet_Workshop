@@ -14,7 +14,7 @@
   tasks:
     - name: "Configure rota estatica para destino remoto"
       fortios_router_static:
-        state: "absent"
+        state: "present"
         vdom: "{{ vdom }}"
         router_static:
           status: "enable"
