@@ -23,4 +23,4 @@
           src_addr_type: name
           dst_addr_type: name
           src_name: "RedHat_local"
-          dst_name: "RedHat_remote"
+          dst_name: "Redhat_remoto"
